@@ -32,7 +32,7 @@ def automatic_loader(queries: List[str], max_results: int):
 
     txt_dir = "./txt"
     os.makedirs(txt_dir, exist_ok=True)
-    for pdf_path in tqdm(glob.glob(pdf_dir), desc="Extracting text"):
+    for pdf_path in tqdm(glob.glob(f"{pdf_dir}/*.pdf"), desc="Extracting text"):
         doc = extract_document_text(pdf_path)
         content = "\n\n".join([linearize_page(page.ocr) for page in doc.pages])
         txt_path = f"{txt_dir}/{os.path.basename(pdf_path).replace('.pdf', '.txt')}"
