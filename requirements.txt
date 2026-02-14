@@ -1,4 +1,4 @@
-vllm==0.11.0
+vllm==0.15.1
 PyYAML==6.0.3
 uvicorn==0.40.0
 langchain-milvus==0.3.3
@@ -6,3 +6,4 @@ arxiv==2.4.0
 ipykernel==7.2.0
 pymupdf==1.26.7
 pytesseract==0.3.13
+docling==2.73.1
