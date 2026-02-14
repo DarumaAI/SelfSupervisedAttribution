@@ -12,11 +12,11 @@ from docling.pipeline.vlm_pipeline import VlmPipeline
 
 
 class CustomDoclingPdfConverter:
-    def __init__(self, port: int, served_model_name: str):
+    def __init__(self, port: int, served_model_name: str, concurrency: int):
         self.port = port
         self.base_url = f"http://localhost:{port}"
 
-        self.prepare_converter(served_model_name)
+        self.prepare_converter(served_model_name, concurrency)
 
     def prepare_converter(self, served_model_name: str, concurrency: int):
         vlm_options = VlmConvertOptions.from_preset(
